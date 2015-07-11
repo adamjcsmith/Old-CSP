@@ -1,0 +1,42 @@
+﻿.newbuttons {
+	background-color:#5e5e5e;
+	-webkit-border-top-left-radius:0px;
+	-moz-border-radius-topleft:0px;
+	border-top-left-radius:0px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:0px;
+	-moz-border-radius-bottomright:0px;
+	border-bottom-right-radius:0px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0px;
+	display:inline-block;
+	color:white !important;
+	font-family:'Oswald', sans-serif;
+	font-size:20px;
+	font-style:normal;
+	height:130px;
+	line-height:37px;
+	width:auto;
+	text-decoration:none;
+	text-align:center;
+	float: left;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	text-transform: uppercase;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 10px;
+
+	
+}.newbuttons:hover {
+	background-color: #0074aa;
+}.newbuttons:active {
+	position:relative;
+	top:1px;
+}

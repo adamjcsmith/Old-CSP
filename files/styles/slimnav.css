@@ -1,0 +1,27 @@
+#nav li a {
+    color: #5e5e5e;
+}
+
+#nav li a:hover {
+    color: #006396 !important;
+}
+
+#fbimg, #twimg, #ytimg {
+    -webkit-filter: brightness(50%);
+}
+
+#headwrap {
+	position: static;
+}
+
+.title {
+	margin: 0 auto 0 auto !important;
+	top: 40px;
+	padding: 30px 0;
+	border-top: solid 1px #ccc; 
+	border-bottom: solid 1px #ccc;
+}
+
+#container {
+    min-height: 84%;
+}

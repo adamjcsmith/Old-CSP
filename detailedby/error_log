@@ -1,0 +1,7 @@
+[04-Apr-2015 16:37:34 Europe/London] PHP Parse error:  syntax error, unexpected 'var' (T_VAR), expecting ';' in /home/cspprofe/public_html/cspdetailing.com/detailedby/index.php on line 30
+[04-Apr-2015 16:37:57 Europe/London] PHP Parse error:  syntax error, unexpected '++' (T_INC), expecting ')' in /home/cspprofe/public_html/cspdetailing.com/detailedby/index.php on line 30
+[04-Apr-2015 16:37:59 Europe/London] PHP Parse error:  syntax error, unexpected '++' (T_INC), expecting ')' in /home/cspprofe/public_html/cspdetailing.com/detailedby/index.php on line 30
+[08-Apr-2015 22:06:49 Europe/London] PHP Parse error:  syntax error, unexpected '=' in /home/cspprofe/public_html/cspdetailing.com/detailedby/car.php on line 14
+[08-Apr-2015 22:07:16 Europe/London] PHP Parse error:  syntax error, unexpected '=' in /home/cspprofe/public_html/cspdetailing.com/detailedby/car.php on line 14
+[08-Apr-2015 22:07:17 Europe/London] PHP Parse error:  syntax error, unexpected '=' in /home/cspprofe/public_html/cspdetailing.com/detailedby/car.php on line 14
+[08-Apr-2015 22:07:18 Europe/London] PHP Parse error:  syntax error, unexpected '=' in /home/cspprofe/public_html/cspdetailing.com/detailedby/car.php on line 14

@@ -1,0 +1,30 @@
+﻿/* 	+Navigation Pack */
+
+#nav {
+	list-style: none;
+	height: 28px;
+	float: left;
+}
+
+#nav li {
+	float: left;
+	position: relative;
+	padding: 15px 0;
+}
+
+#nav li a {
+	display: block;
+	text-decoration: none;
+    font: 300 14px 'Oswald', sans-serif;
+    padding: 5px 14px;
+	color: white;
+    text-transform: uppercase;
+}
+
+#selected { border-bottom: 5px #5E5E5E solid; }
+
+#nav li a:hover {
+	text-decoration: underline;
+}
+
+#nav li:hover > a { }

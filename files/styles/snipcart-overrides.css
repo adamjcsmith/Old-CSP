@@ -1,0 +1,26 @@
+.snipcart-product-name, #snipcart-main-container span.snipcart-unit-price, #snipcart-main-container span.snipcart-total-price, #snipcart-header,
+    #snipcart-main-container table#snipcart-items .snipcart-item-quantity-triggers span, #snipcart-header #snipcart-total span, #snipcart-header #snipcart-total span.snipcart-label span,
+    #snipcart-header #snipcart-title, #snipcart-main-container a.snipcart-btn, #snipcart-main-container button.snipcart-btn,
+    #snipcart-main-container table#snipcart-items span.snipcart-product-description, #snipcart-main-container table#snipcart-items tr th, #snipcart-main-container table#snipcart-items tr td {
+
+    text-transform: none !important;
+    font-family: 'Lato', sans-serif !important;
+}
+
+#snipcart-header, div#snipcart-footer, #snipcart-header #snipcart-header-total, #snipcart-header #snipcart-total, #snipcart-header #snipcart-total span.snipcart-label {
+    background: #006396;
+    border: none;
+    color: white;
+}
+
+#snipcart-main-container a.snipcart-btn, #snipcart-main-container button.snipcart-btn {
+    background: white;
+    color: #5e5e5e;
+    font-weight: bold;
+}
+
+#snipcart-main-container #snipcart-actions a.snipcart-next, #snipcart-main-container #snipcart-actions a.snipcart-finalize {
+    background: yellow;
+    color: black;
+    border: solid 1px #5e5e5e;
+}

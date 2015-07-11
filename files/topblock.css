@@ -1,0 +1,111 @@
+﻿/* 	This is the CSS for the top block banner */
+/* 	LEFT and RIGHT sections: LEFT = Language bar, RIGHT = Higher menu */
+	
+#topblock {
+	color: white;
+	height: 26px;
+	display: block;
+	position: relative;
+	z-index: 3;
+	/*max-width: 960px; */
+	margin: 0 auto 0 auto;
+	/*background-color: #202126; */
+	background-color: rgba(255,255,255,0.3); 
+	/* background-color: #0074a4; SOLID BLUE COLOUR MODE FOR 'WHITE' / NO BG MODE */
+	background-color: rgba(255,255,255,0.2);
+	/* background-color: #00436e; */
+}
+
+#topblockcontent {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+
+/* Top Left */
+.blockleft {
+	display: block;
+	height: auto;
+	width: 450px;
+	vertical-align: middle;
+	font: 12px 'Ubuntu', sans-serif;
+	text-align: left;
+	/*padding-left: 0.5em;*/
+	float: left;
+	color: #f2f2f2;
+	/*margin-top: 12px; */		
+}
+
+.blockleft li {
+	float: left;
+	list-style-type: none;
+}
+
+.blockleft li a {
+	padding: 0 0px 0 0px;
+	text-decoration: none;
+color: #0f0f0f;	
+}
+
+.blockleft li a:hover{
+	color: black;
+	transition: all 0.5s ease 0;
+
+	
+}
+
+
+
+/* Top Right */
+.blockright {
+	display: block;
+	height: 100%;
+	width: 450px;
+	vertical-align: middle;
+	font: 13px 'Lato', sans-serif;
+	letter-spacing: 0.01px;
+	text-align: right;
+	/*line-height: 1.9em;*/
+	/*padding: 0 0.5em 0 0;*/
+	float: right;
+}
+
+.blockright ul {
+	float: right;
+	list-style-type: none;
+	display: table-cell;
+	
+}
+
+.blockright ul a {
+	display: table-cell;
+	padding: 0px 10px;
+	/* text-decoration: none; */
+	color: #5e5e5e;
+	vertical-align: middle;
+	height: 26px; /* Same as Top Block height */
+	background-color: white;
+	letter-spacing: 0.01px;
+	/* border-right: 2px #00436e solid; */
+}
+
+.imgholder {
+	display: table-cell;
+	padding: 0px 3px;
+	vertical-align: middle;
+	margin-top: 8px;
+	float: right;
+}
+
+.blockright ul a:hover {
+	color: white;
+	background-color: #00436e;
+	transition: all .2s ease 0;
+}
+
+#spacer {
+	display: table-cell;
+	height: 100%;
+	width: 100%;
+	
+}

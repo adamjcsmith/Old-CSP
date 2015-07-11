@@ -1,0 +1,13 @@
+﻿@media screen and (max-width: 730px) {
+	
+.pagebannerbg {
+	display: none;
+}
+	
+.mobiletitle {
+	display: inline-block !important;
+}	
+	
+		
+	
+}
