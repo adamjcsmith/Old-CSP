@@ -69,6 +69,18 @@
 	    <script src="/files/fastclick.js"></script>		
 		<script src="/files/jquery.lazyload.js" type="text/javascript"></script>
 	
+		<!--Start of Zopim Live Chat Script-->
+<script type="text/javascript">
+window.$zopim||(function(d,s){var z=$zopim=function(c){
+z._.push(c)},$=z.s=
+d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+$.src='//v2.zopim.com/?3A2nLjB9RZ65ppc4B0ZOrjoHpySvuuHE';z.t=+new Date;$.
+type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+</script>
+<!--End of Zopim Live Chat Script-->
+
+	
 	</head>
 	
 	<body>
@@ -157,10 +169,6 @@
 ?>		
 <div id="container">
 <?php
-    if(!isset($bannerurl)) { echo "<script> $('head').append('<link rel=\"stylesheet\" href=\"/files/styles/slimnav.css\" type=\"text/css\" />');</script>"; }
-	
 	if(!isset($home)) { echo '<div id="contentbox">'; }
-			
-	if(isset($titletext)) { echo '<div class="clear"></div>'; }
   ?>
 <div class="clear"></div>

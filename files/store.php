@@ -12,7 +12,6 @@
 	echo '
         <div class="storecontainer mb2">
 		    <div class="storemenu">
-		        <!--<a href="/"><img src="/images/csp3.png" height="24" style="margin-top: 9px; margin-left: 10px; margin-right: 5px; float: left;"></a>-->
                 <li class="mobileshow"><a href="/range">Store Home</a></li>';
 
                 while($row = $result->fetch_assoc()){

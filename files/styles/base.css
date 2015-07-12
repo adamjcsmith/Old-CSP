@@ -33,9 +33,9 @@ h6 { font-size: 19px; }
 /* ---------- Header + Footer ---------- */
 
 #headwrap { width: 100%; }
-#header { max-width: 1200px; margin: 0px auto; }
-#logo { max-width: 60px; float: left; margin: 16px 15px 0 10px; }
-.rightpanel { float: right; margin-top: 19px; }
+#header { max-width: 1300px; margin: 0px auto; }
+#logo { max-width: 70px; float: left; margin: 25px 15px 0 10px; }
+.rightpanel { float: right; margin-top: 25px; }
 .pagebannerbg { background: url(/images/backgrounds/wheel.jpg); height: 350px; width: 100%; float: left; position: relative; }
 .pagebanner { width: 100%; height: 100%; opacity: 0.7; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(155, 155, 155, 0.3) 37%, rgba(255, 255, 255, 0.3) 61%, rgba(255, 255, 255, 0.3) 100%); }
 
@@ -94,8 +94,8 @@ a.windowlink:hover { background-color: rgba(255, 255, 255, 0); transition: backg
 /* ---------- Navigation ---------- */
 
 #nav li { float: left; list-style: none; }
-#nav li a { display: block; font: 300 14px 'Oswald', sans-serif; padding: 20px 14px; color: #5e5e5e; text-transform: uppercase; }
-#nav li a:hover { background: #f2f2f2; color: #006396; transition: all 0.5s ease; }
+#nav li a { display: block; font: 300 16px 'Oswald', sans-serif; padding: 30px 14px; color: black; text-transform: uppercase; }
+#nav li a:hover { background: rgba(0,99,150,0.7); color: white; text-decoration: none; transition: all 0.3s ease; }
 .social-icons { color: #5e5e5e; }
 .social-icons:hover { color: #006396; }
 
