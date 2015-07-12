@@ -28,7 +28,7 @@ h6 { font-size: 19px; }
 
 .indent { padding-left: 1.6em; color: #5e5e5e; }
 .title { max-width: 1180px; margin: 20px auto; color: #006296; padding: 5px 10px 10px 0; }
-.subheading { width: 100%; padding: 10px; color: #006296; margin: 40px 0 30px 0; font: 300 22px 'Oswald', sans-serif; text-transform: uppercase; border-bottom: rgba(0,99,150,0.3) 1px solid; text-align: center; }
+.subheading { width: 100%; padding: 10px; color: #006296; margin: 5vh 0 30px 0; font: 300 22px 'Oswald', sans-serif; text-transform: uppercase; border-bottom: rgba(0,99,150,0.3) 1px solid; text-align: center; }
 
 /* ---------- Header + Footer ---------- */
 
@@ -72,6 +72,24 @@ a.windowlink:hover { background-color: rgba(255, 255, 255, 0); transition: backg
 .dim { color: #5e5e5e; }
 .dimmer { color: #8e8e8e; }
 .thin { font-weight: 300; }
+
+.m-show { display: none; }
+.ib { display: inline-block; }
+.fl { float: left; }
+.fr { float: right; }
+.l { text-align: left; }
+.r { text-align: right; }
+.c { text-align: center; }
+.m2 { margin: 2vh; } .mt2 { margin-top: 2vh; } .mr2 { margin-right: 2vh; } .mb2 { margin-bottom: 2vh; } .ml2 { margin-left: 2vh; }
+.m5 { margin: 5vh; } .mt5 { margin-top: 5vh; } .mr5 { margin-right: 5vh; } .mb5 { margin-bottom: 5vh; } .ml5 { margin-left: 5vh; }
+.m10 { margin: 10vh; } .mt10 { margin-top: 10vh; } .mr10 { margin-right: 10vh; } .mb10 { margin-bottom: 10vh; } .ml10 { margin-left: 10vh; }
+.m20 { margin: 20vh; } .mt20 { margin-top: 20vh; } .mr20 { margin-right: 20vh; } .mb20 { margin-bottom: 20vh; } .ml20 { margin-left: 20vh; }
+.m25 { margin: 25vh; }
+.p2 { padding: 2vh; }
+.p5 { padding: 5vh; }
+.p10 { padding: 10vh; }
+.p20 { padding: 20vh; }
+.p25 { padding: 25vh; }
 
 /* ---------- Navigation ---------- */
 

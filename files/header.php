@@ -50,11 +50,11 @@
         <link type="text/css" id="snipcart-theme" href="https://app.snipcart.com/themes/base/snipcart.css" rel="stylesheet" />
         <link href="/files/bxslider/jquery.bxslider.css" rel="stylesheet" />		
 		<link rel="stylesheet" href="/files/mobile.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 		
 		<!-- Fonts --> 
 		<link href="//fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet" type="text/css">
 		<link href='//fonts.googleapis.com/css?family=Oswald:300,400' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">		
 		
 		<!-- jQuery and JavaScript -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

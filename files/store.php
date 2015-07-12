@@ -10,7 +10,7 @@
 	
 	// Include store header:
 	echo '
-        <div class="storecontainer">
+        <div class="storecontainer mb2">
 		    <div class="storemenu">
 		        <!--<a href="/"><img src="/images/csp3.png" height="24" style="margin-top: 9px; margin-left: 10px; margin-right: 5px; float: left;"></a>-->
                 <li class="mobileshow"><a href="/range">Store Home</a></li>';
@@ -30,11 +30,6 @@
 			   <li class="floatright mobilehide"><a id="deliverybutton" href="/range/delivery/">Delivery Info</a></li>
 		    </div>
 		</div>
-		<div style="height: 35px; width= 100%;"></div>
 	';
-
-
-
-
 
 ?>
