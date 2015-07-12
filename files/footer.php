@@ -4,10 +4,6 @@
 	?>
 	<div class="clear"></div>
 	
-	
-
-
-	
 	</div>
 	<footer>
 	

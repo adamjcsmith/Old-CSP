@@ -12,7 +12,6 @@
 	$store = true;
 	include '../files/php/functions.php';
 	include '../files/header.php';  // Use '../../files/header.php' if the product directory is beyond /product/
-	include '../files/store.php';
 	include '../files/currencyconverter.php'; // Same as above
 	// As a failsafe, check when the last currency table was updated:
 	$x = new CurrencyConverter('localhost','cspprofe_csp','adamlancaster2013','cspprofe_main','currencytable');

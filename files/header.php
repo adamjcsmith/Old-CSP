@@ -171,14 +171,18 @@
 				<div class="clear"></div>';
 		}
 
-		if(isset($store)) { $fixedbarfix = "upspace2"; }
 		echo '
 		<hr class="mobileshow">
-		<div class="title centre '.$fixedbarfix.'">
+		<div class="title centre">
 				<h2>' .$pagetitle. '</h2>
 			</div>
 		<hr class="mobileshow" style="margin-bottom: 10px;">';
-			} 
+		} 
+		
+		if(isset($store)) {
+			include '../files/store.php';			
+		}
+
 ?>		
 <div id="container">
 <?php

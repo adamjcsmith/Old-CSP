@@ -8,8 +8,6 @@
 	
 	include '../files/header.php'; 
 	
-	include '../files/store.php';
-	
 	if(!$categories = $db->query("SELECT * FROM category")){
     die('There was an error running the query [' . $db->error . ']'); }
 ?>
@@ -22,15 +20,15 @@
 <iframe src="https://snapwidget.com/in/?u=Y3NwZGV0YWlsaW5nfGlufDEyNXw0fDF8fG5vfDV8bm9uZXxvblN0YXJ0fHllc3x5ZXM=&ve=220415" title="Instagram Widget" class="snapwidget-widget" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%;"></iframe>
 -->
 
-	<div class="div100 centre" style="border: solid 1px #006396; padding: 20px; border-radius: 5px;">
+	<div class="div100 centre" style="background: rgba(0,99,150,0.7); color: white; padding: 20px;">
 		
 
 		<div class="canvas">
 		
 			<div class="div60">
-				<h2 class="cspblue">Launching Soon</h2>
+				<h2>Launching Soon</h2>
 				<div class="line"></div>
-				<h3 class="dim"><i class="fa fa-bullseye fa-fw" style="margin-right: 10px"></i>Register for New Product Samples, Special Offers and Latest News</h3>
+				<h5><i class="fa fa-bullseye fa-fw" style="margin-right: 10px"></i>Register for New Product Samples, Special Offers and Latest News</h5>
 			
 			</div>
 			
@@ -52,10 +50,12 @@
 				<form action="//cspprofessional.us3.list-manage.com/subscribe/post?u=af1181b71b5540011d1fc86c9&amp;id=0224a78791" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 					<div id="mc_embed_signup_scroll">
 					
-					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" style="border: none; border-radius: 3px;" required>
 					<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-					<div style="position: absolute; left: -5000px;"><input type="text" name="b_af1181b71b5540011d1fc86c9_0224a78791" tabindex="-1" value=""></div>
-					<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+					<div style="position: absolute; left: -5000px;"><input type="text" name="b_af1181b71b5540011d1fc86c9_0224a78791" tabindex="-1" value="" ></div>
+					<div class="clear">
+						<input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: white; color: rgba(0,99,150,0.7); border-radius: 40px; font: 400 16px 'Oswald'; padding: 5px 25px; height: auto; width: auto; ">
+					</div>
 					</div>
 				</form>
 				</div>
@@ -87,7 +87,7 @@
 		// Otherwise, write category to page:
 		$catname = str_replace(' ', '', $catrow['name']);
 		
-		echo '<a name="'.$catname.'"></a><div class="subheading upspace2">' .$catrow['name']. '</div>';
+		echo '<a name="'.$catname.'"></a><div class="subheading">' .$catrow['name']. '</div>';
 		echo '<div class="canvas downspace">';
 
 		while($prodrow = $productquery->fetch_assoc()){
