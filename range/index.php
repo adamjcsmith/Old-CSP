@@ -8,6 +8,8 @@
 	
 	include '../files/header.php'; 
 	
+	include '../files/store.php';
+	
 	if(!$categories = $db->query("SELECT * FROM category")){
     die('There was an error running the query [' . $db->error . ']'); }
 ?>

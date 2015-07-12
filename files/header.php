@@ -62,12 +62,13 @@
 		<script type="text/javascript" src="/files/menu/tinydropdown.js"></script>
 		<script type="text/javascript" src="/files/LazyLoadYT/lazyYT.js"></script>
         <script type="text/javascript" id="snipcart" src="https://app.snipcart.com/scripts/snipcart.js" data-autopop="false" data-api-key="YjNmNzdiODEtM2UwZi00MjFhLWI4MmItYTI0Njc5NWVkZjk0"></script>		
-		<script src="/files/readmore/readmore.min.js"></script>		
+		<script src="/files/readmore/readmore.min.js"></script>
+	    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>		
         <script src="/files/bxslider/jquery.bxslider.min.js"></script>		
 		<script src="/files/csp.js" type="text/javascript"></script>	
 	    <script src="/files/fastclick.js"></script>		
 		<script src="/files/jquery.lazyload.js" type="text/javascript"></script>
-	    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>	
+	
 	</head>
 	
 	<body>

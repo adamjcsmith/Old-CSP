@@ -1,6 +1,5 @@
 /* Activate Libraries */
 $('.js-lazyYT').lazyYT();
-$(function(){ $('#menu').slicknav( { label: '' } ); });
 var switchTo5x=true;
 /* stLight.options({publisher: "ur-36245509-985c-124a-a4b2-32cbf745b86", doNotHash: false, doNotCopy: false, hashAddressBar: false}); */
 $(function() { $("div.image").lazyload({ effect : "fadeIn" }); });
@@ -10,19 +9,9 @@ if ('addEventListener' in document) {
     }, false);
 }
 
-/* Mobile Menu */
-
-function toggleMenu() {
-	
-	alert("hi");
-	$('#newCSPMenu').toggle();
-	
-}
-
 
 /* E-Commerce */
 var options = [];
-
 var productTitle = '';
 var productVolume = '';
 var productType = '';
