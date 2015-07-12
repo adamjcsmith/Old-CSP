@@ -3,7 +3,7 @@
 /* ---------- Resets ---------- */
 
 * { margin: 0; padding: 0; box-sizing: border-box;  }
-img { border: 0 } /* IE 7-10 Fix */
+img { border: 0 }
 html, body { height: 100%; }
 
 #container { min-height: 54%; position: relative; }
@@ -92,6 +92,35 @@ a.windowlink:hover { background-color: rgba(255, 255, 255, 0); transition: backg
 .addtobasket { width: 30%; padding: 10px; background: #8aa8bd; border-radius: 7px; cursor: pointer; color: white; display: inline-block; font: normal 15px 'Lato'; }
 .added { background-color: #f2f2f2 !important; color: #ccc !important; }
 
+/* ---------- Mobile Menu ---------- */
+
+#newCSPMenu li {
+	width: 100%;
+	padding: 10px;
+	font: 300 15px 'Oswald', sans-serif;
+	list-style: none;
+	text-transform: uppercase;
+	background: white;
+	color: #006396;
+	margin-bottom: 10px;
+
+}
+
+.menuDiv50 {
+	width: 50%;
+	float: left;
+}
+
+.ind {
+	margin-right: 6px;
+}
+
+#newCSPMenu li:hover, .menuDiv50 li:hover {
+	background: rgba(255,255,255,0.8);
+	transition: background 0.5s ease;
+}
+
+
 /* ---------- To Be Deprecated! ---------- */
 
 .upspace { margin-top: 35px !important; }
@@ -177,3 +206,4 @@ video#bgvid {
     background: ;
     background-size: cover;
 }
+

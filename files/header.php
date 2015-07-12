@@ -58,7 +58,7 @@
 		
 		<!-- jQuery and JavaScript -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-	    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>		
+	
 		<script type="text/javascript" src="/files/menu/tinydropdown.js"></script>
 		<script type="text/javascript" src="/files/LazyLoadYT/lazyYT.js"></script>
         <script type="text/javascript" id="snipcart" src="https://app.snipcart.com/scripts/snipcart.js" data-autopop="false" data-api-key="YjNmNzdiODEtM2UwZi00MjFhLWI4MmItYTI0Njc5NWVkZjk0"></script>		
@@ -66,45 +66,12 @@
         <script src="/files/bxslider/jquery.bxslider.min.js"></script>		
 		<script src="/files/csp.js" type="text/javascript"></script>	
 	    <script src="/files/fastclick.js"></script>		
-		
-		<!--<script src="/files/modernizr.js"></script>-->		
-		<!--<script type="text/javascript" src="/files/DropdownBox/js/modernizr.custom.79639.js"></script>-->
-		<!--<script type="text/javascript" src="/files/NiceScroll/jquery.nicescroll.js"></script>-->
 		<script src="/files/jquery.lazyload.js" type="text/javascript"></script>
-
-		
-		<!-- Temporary Menu -->
-		
-		<style>
-			#newCSPMenu li {
-				width: 100%;
-				padding: 10px;
-				font: 300 15px 'Oswald', sans-serif;
-				list-style: none;
-				text-transform: uppercase;
-				background: white;
-				color: #006396;
-				margin-bottom: 10px;
-
-			}
-			
-			.menuDiv50 {
-				width: 50%;
-				float: left;
-			}
-			
-			.ind {
-				margin-right: 6px;
-			}
-			
-			#newCSPMenu li:hover, .menuDiv50 li:hover {
-				background: rgba(255,255,255,0.8);
-				transition: background 0.5s ease;
-			}
-		</style>
-		 
-		
-		
+	    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>	
+	</head>
+	
+	<body>
+	
 		<div id="newCSPMenu" class="centre" style="width: 100%; z-index: 110; height: auto; background: white; color: white; padding: 0 10px; position: absolute; top: 45; left: 0; display: none;">
 
 			<hr style="margin-bottom: 10px; margin-left: 0; margin-right: 0;">
@@ -129,31 +96,13 @@
 				
 			<hr style="margin-left: 0; margin-right: 0; margin-top: 10px;">
 
-		</div>
+		</div>	
 		
-		
-	</head>
-	<body>
-    <?php
-		if(isset($store)) { $selectedTab = 'selected'; }
-        echo '
-		
-		<ul id="menuTEST" style="display: none;">
-			<li><a href="/">Home</a></li>
-			<li><a href="/join/">Join Team CSP</a></li>
-			<li><a href="/range/">Range</a></li>
-			<li><a href="/detailedby/">Detailed By</a></li>
-			<li><a href="/training/">Training</a></li>
-			<li><a href="/branches/">Branches</a></li>
-			<li><a href="/contacts/">Contact</a></li>	  	
-		</ul>
-		
-		<a class="mobileshow" style="cursor: pointer; position: relative; height: 45px; width: 45px; float: right; padding: 16px; color: #006396; z-index: 1000;" onclick="$(\'#newCSPMenu\').fadeToggle(300);">
+		<a class="mobileshow" style="cursor: pointer; position: relative; height: 45px; width: 45px; float: right; padding: 16px; color: #006396; z-index: 1000;" onclick="$('#newCSPMenu').fadeToggle(300);">
 			<i class="fa fa-bars fa-lg"></i>
 		</a>
 		
-		
-		<div id="headwrap"'; if(isset($home)) echo 'class="integrated-menu"'; echo '>
+		<div id="headwrap">
 			<div id="header">
 				<div id="headercontent">
 				    <a href="/"><img src="/images/csp3.png" id="logo" alt="CSP"></a>	
@@ -176,11 +125,9 @@
 			</div>
 		</div>
 		
-				<div class="clear"></div>
+		<div class="clear"></div>
 		
-		
-		';
-
+	<?php
 	if(isset($contactmode)) {
 		echo '
 		<script src="https://maps.googleapis.com/intl/en_us/mapfiles/api-3/17/6/main.js" type="text/javascript"></script>
@@ -213,8 +160,8 @@
 		</div>
 		<div class="clear"></div>';
 	}
-?>
-<?php  if(isset($pagetitle)) {
+
+	if(isset($pagetitle)) {
       if(isset($bannerurl) && !isset($contactmode)) {
 		echo '<div class="pagebannerbg mobilehide downspace" style="background:url(' .$bannerurl. '); background-position: center '.$yshift.'px;">
 					<div class="pagebanner">
@@ -232,21 +179,11 @@
 		<hr class="mobileshow" style="margin-bottom: 10px;">';
 			} 
 ?>		
-<div id="container" class="<?php if(!isset($titletext)) { echo 'fix'; } ?>">
+<div id="container">
 <?php
     if(!isset($bannerurl)) { echo "<script> $('head').append('<link rel=\"stylesheet\" href=\"/files/styles/slimnav.css\" type=\"text/css\" />');</script>"; }
 	
-	// Override for just the homepage:
-	//if(isset($home)) { echo "<style>#nav li a { color: white; } #nav li a:hover { color: #f2f2f2 !important; }</style>"; }
-	
-	// Correct for wider store:
-	$storefix = '';
-	if(isset($store) || !isset($bannerurl)) { 
-		$storefix = "wide";
-		echo "<style>.social-icons { color: #5e5e5e; } </style>";
-	}
-	
-	if(!isset($home)) { echo '<div id="contentbox" class="'.$storefix.'">'; }
+	if(!isset($home)) { echo '<div id="contentbox">'; }
 			
 	if(isset($titletext)) { echo '<div class="clear"></div>'; }
   ?>
