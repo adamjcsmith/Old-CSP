@@ -101,8 +101,8 @@ a.windowlink:hover { background-color: rgba(255, 255, 255, 0); transition: backg
 
 /* ---------- Store ---------- */
 
-.storecontainer { width: 100%; }
-.storemenu { max-width: 1200px; margin: 0 auto; overflow: hidden; border-bottom: solid 1px #ccc; border-top: solid 1px #ccc; }
+.storecontainer { width: 100%; background-color: #f1f1f1; }
+.storemenu { max-width: 1200px; margin: 0 auto; overflow: hidden; }
 .storemenu li { display: inline-block; list-style: none; padding: 13px; float: left; font: 300 15px 'Oswald', sans-serif; color: #5e5e5e; letter-spacing: 0.5px; text-transform: uppercase; }
 
 #basketicon { text-indent: 15px; background: url(/images/BasketIcon.png) 10px 11px / 24px NO-REPEAT; position: relative; display: inline-block; float: right; padding: 0 20px 0 30px; font: 500 15px 'Lato', sans-serif; line-height: 47px; height: 47px; }
