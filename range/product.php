@@ -47,7 +47,7 @@
     $num_videos = mysql_num_rows($videos);
 	?>
 	<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-	<h2 class="dim thin upspace2 centre mobileshow"><?php echo $productname; ?></h2>
+	<h2 class="dim thin centre mobileshow"><?php echo $productname; ?></h2>
 	<?php
 		// Add static versions of the product volumes in compliance with snipcart's api:
 		while($row = mysql_fetch_array($volumeinfo)) {

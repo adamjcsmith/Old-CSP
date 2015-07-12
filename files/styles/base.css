@@ -3,7 +3,7 @@
 /* ---------- Resets ---------- */
 
 * { margin: 0; padding: 0; box-sizing: border-box;  }
-img { border: 0 }
+img { border: 0; max-width: 100%; }
 html, body { height: 100%; }
 
 #container { min-height: 54%; position: relative; }
@@ -51,6 +51,7 @@ footer { width: 100%; display: block; position: absolute; }
 .div100 { width: 100%; } .div70 { width: 70%; } .div60 { width: 60%; } .div50 { width: 50%; } .div40 { width: 40%; } .div33 { width: 33.33%; } .div30 { width: 30%; } .div25 { width: 25%; }
 .div20 { width: 16.66%; min-height: 260px; }
 .line { height: 1px; width: 100%; background-color: #f2f2f2; margin: 10px 0; }
+.linelight { border-bottom: 1px solid #f2f2f2; margin: 25px 0; }
 .gridbox { background-position: center; background-size: auto 100%; background-repeat: no-repeat; height: 120px; border-radius: 6px; position: relative; }
 a.windowlink { position: absolute; height: 100%; width: 100%; top: 0; left: 0; text-decoration: none; z-index: 10; background-color: rgba(255, 255, 255, 0.1); cursor: pointer; }
 a.windowlink:hover { background-color: rgba(255, 255, 255, 0); transition: background-color 0.5s ease; }

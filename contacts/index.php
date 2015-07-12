@@ -47,7 +47,9 @@
 			</div>
 		</div>
 	</div>
+	
 	<div class="subheading">Head Office & Training Facility</div>
+	
 	<div class="section" style="/*background-image:url(/images/backgrounds/Manchester-Map.png); */">
 		<div class="div40">
 			<h5>We are situated in Westbrook Park, an industrial complex in the Trafford area of Manchester.</h5>
@@ -55,16 +57,21 @@
 			<h5>The site is just a mile from J9/J10 of the M60, or alternatively just under two miles from J2 of the M602.  The Trafford Centre, and the city centre are under three miles away.</h5>
 		</div>
 		<div class="div60">
-			<div class="image smallmap" data-original="/images/backgrounds/Trafford-Map.png"></div>
+			<img src="/images/backgrounds/Trafford-Map.png" alt="Map of Trafford, Manchester" />
 		</div>
 		<div class="clear"></div>	
 	</div>
-	<div class="subheading upspace">Distribution Centre</div> 	  						
+	
+	<div class="subheading upspace">Distribution Centre</div> 
+	
 	<div class="div40">
-		<div class="image bigmap" data-original="/images/backgounds/Manchester-Map.png"></div>	
+		<img src="/images/backgrounds/Manchester-Map.png" alt="Map of Manchester" />
 	</div>   						
 	<div class="div60">
-		<div class="image unitpic" data-original="/images/unit.jpg"></div>
-	</div>	   							   						
+		<img src="/images/unit.jpg" alt="Unit" />
+	</div>
+
+
+	
 	<div class="clear"></div>
 <?php include '../files/footer.php'; ?>
