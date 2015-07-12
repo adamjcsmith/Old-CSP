@@ -1,23 +1,14 @@
 <?php	
-	$selected;
-
-	// Page titles:
+	
+	// Page Titles:
 	if(isset($pagetitle)) $title = $pagetitle . " - CSP Detailing";
 	else $title = "CSP Detailing";
-	
-	// Database Connection:
-	$db = new mysqli('localhost', 'cspprofe_csp', 'adamlancaster2013', 'cspprofe_products');
-	if($db->connect_errno > 0){ die('Unable to connect to database [' . $db->connect_error . ']'); }
-		
+
 	// Pre-Declarations:
-	$catpage; $catlink; $subpage; $titletext; $bannerurl; $pagetitle; $stretch; $yshift; $xshift;
+	$selected; $catpage; $catlink; $subpage; $titletext; $bannerurl; $pagetitle; $stretch; $yshift; $xshift;
 	
 	// Check if the shifts have been set:
 	if(empty($yshift)) $yshift = '0'; if(empty($xshift)) $xshift = '0';
-
-	if(!$result = $db->query("SELECT * FROM category")){
-        die('There was an error running the query [' . $db->error . ']');
-    }
 	
 	// Force HTTPS:
 	if($_SERVER["HTTPS"] != "on") {
@@ -26,7 +17,7 @@
 	}
 
 ?>
-<!doctype html class='no-js'>
+<!doctype html>
 	<head>
 		<title><?php echo $title; ?></title>
 		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
@@ -53,12 +44,10 @@
 		
 		<!-- Stylesheets -->
 		<link rel="stylesheet" href="/files/styles/base.css">
-		<link rel="stylesheet" href="/files/mobilemenu/slicknav.css">
 		<link rel="stylesheet" href="/files/menu/tinydropdown.css">
 		<link rel="stylesheet" href="/files/LazyLoadYT/lazyYT.css">
 		<link rel="stylesheet" href="/files/DropdownBox/css/style.css">
         <link type="text/css" id="snipcart-theme" href="https://app.snipcart.com/themes/base/snipcart.css" rel="stylesheet" />
-		<link rel="stylesheet" href="/files/styles/snipcart-overrides.css">
         <link href="/files/bxslider/jquery.bxslider.css" rel="stylesheet" />		
 		<link rel="stylesheet" href="/files/mobile.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -69,14 +58,13 @@
 		
 		<!-- jQuery and JavaScript -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>		
 		<script type="text/javascript" src="/files/menu/tinydropdown.js"></script>
-		<script src="/files/mobilemenu/jquery.slicknav.js"></script>
 		<script type="text/javascript" src="/files/LazyLoadYT/lazyYT.js"></script>
         <script type="text/javascript" id="snipcart" src="https://app.snipcart.com/scripts/snipcart.js" data-autopop="false" data-api-key="YjNmNzdiODEtM2UwZi00MjFhLWI4MmItYTI0Njc5NWVkZjk0"></script>		
 		<script src="/files/readmore/readmore.min.js"></script>		
         <script src="/files/bxslider/jquery.bxslider.min.js"></script>		
 		<script src="/files/csp.js" type="text/javascript"></script>	
-	    <script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 	    <script src="/files/fastclick.js"></script>		
 		
 		<!--<script src="/files/modernizr.js"></script>-->		
@@ -144,29 +132,11 @@
 		</div>
 		
 		
-		
-		
-        <?php
-        if(isset($store)) { echo "
-        <script>
-            $(window).bind('scroll', function() {
-                 if ($(window).scrollTop() > 61) {
-                     //$('.storecontainer').addClass('fixed');
-                     //$('#container').addClass('correction');
-                 }
-                 else {
-                     //$('.storecontainer').removeClass('fixed');
-                    //$('#container').removeClass('correction');
-                 }
-            });
-        </script>";
-        }
-        ?>
 	</head>
-	<body style="background-color: <?php if(isset($store)) { echo 'rgba(0,0,0,0)'; }?>">
+	<body>
     <?php
 		if(isset($store)) { $selectedTab = 'selected'; }
-        if(!isset($store) || isset($store)) { echo '
+        echo '
 		
 		<ul id="menuTEST" style="display: none;">
 			<li><a href="/">Home</a></li>
@@ -181,7 +151,6 @@
 		<a class="mobileshow" style="cursor: pointer; position: relative; height: 45px; width: 45px; float: right; padding: 16px; color: #006396; z-index: 1000;" onclick="$(\'#newCSPMenu\').fadeToggle(300);">
 			<i class="fa fa-bars fa-lg"></i>
 		</a>
-		
 		
 		
 		<div id="headwrap"'; if(isset($home)) echo 'class="integrated-menu"'; echo '>
@@ -211,35 +180,7 @@
 		
 		
 		';
-		}
-?>
-<?php
-    if(isset($store)) { echo '
-        <div class="storecontainer">
-		    <div class="storemenu">
-		        <!--<a href="/"><img src="/images/csp3.png" height="24" style="margin-top: 9px; margin-left: 10px; margin-right: 5px; float: left;"></a>-->
-                <li class="mobileshow"><a href="/range">Store Home</a></li>';
 
-                while($row = $result->fetch_assoc()){
-					$catname = str_replace(' ', '', $row['name']);
-					
-					// If category is hidden then skip this loop:
-					if($row['hidden'] == '1') continue;
-					
-                    echo '<li class="mobilehide"><a href="/range/#'.$catname.'">' . $row['name'] . '</a></li>';
-                }
-
-                echo '
-                <li class="floatright selected snipcart-checkout mobilehide"><a href="#">Checkout</a></li>
-                 <div id="basketicon"><a class="snipcart-checkout windowlink"></a><span class="snipcart-summary"><b><span class="snipcart-total-price"></span></b></span></div>
-			   <li class="floatright mobilehide"><a id="deliverybutton" href="/range/delivery/">Delivery Info</a></li>
-		    </div>
-		</div>
-		<div style="height: 35px; width= 100%;"></div>
-		';
-		}
-?>
-<?php
 	if(isset($contactmode)) {
 		echo '
 		<script src="https://maps.googleapis.com/intl/en_us/mapfiles/api-3/17/6/main.js" type="text/javascript"></script>

@@ -15,7 +15,7 @@
 			<div class="prefootercontent" style="padding-bottom: 30px;">
 				<div class="canvas">
 					<div class="div60">
-						<div class="canvas white">
+						<div class="canvas">
 							<div class="div25" style="min-height: 0;"><h3>SITE LINKS</h3></div>
 							<div class="div25" style="min-height: 0;"><h3>STORE</h3></div>
 							<div class="div25" style="min-height: 0;"><h3>CSP</h3></div>
