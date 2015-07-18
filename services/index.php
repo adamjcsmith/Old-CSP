@@ -4,7 +4,7 @@
 	$yshift = -200;
 	$xshift = 0;
 	$pagetitle = 'Services';
-	$bannerurl = "/images/services/services.jpg";
+	//$bannerurl = "/images/services/services.jpg";
 	
 	include '../files/header.php'; 
 ?>
@@ -91,6 +91,17 @@
 		transition: all 0.5s ease;
 	}
 	
+	#estimateDetails p {
+		font-size: 22px;
+	}
+	
+	#estimateDetails {
+		color: white;
+		background: rgba(0,99,150,0.7);
+		padding: 20px;
+		margin-top: 10px;
+	}
+	
 	@media (max-width: 500px) {
 		.div25 { width: 100% !important; }
 		.selectBox { height: 40vh; }
@@ -116,12 +127,12 @@
 		
 		</div>
 		
-		<div class="clear"></div>		
+		<div class="clear"></div>
 		
 		<div id="estimateDetails" class="div100 centre" style="display: none;">
-			<h5 id="baseEstimateText" style="" class="">Base Estimate:</h5>
-			<h5 id="extraEstimateText" style="" class="">Extras:</h5>
-			<h5 id="totalEstimateText" style="" class="">Total:</h5>
+			<p id="baseEstimateText" style="" class="">Base Estimate:</p>
+			<p id="extraEstimateText" style="" class="">Extras:</p>
+			<p id="totalEstimateText" style="border-top: solid 1px white; margin-top: 10px; padding-top: 10px; " class="">Total:</p>
 			
 		</div>			
 		
@@ -344,6 +355,7 @@ $('#owl-csp').on('click', '.div25', function(){
 		
 		for(var k=0; k<stageDetails[5].selected.length; k++) {
 			var selectID = stageDetails[4].selected[k];
+			console.log("This attempt used a selectID of : " + selectID);
 			interiorExtras += stageDetails[5].options[selectID].price;
 		}
 	
@@ -363,12 +375,18 @@ function evalBackNext() {
 	
 	if(stage > 4) $('#nextButton').html("Finish");
 	else $('#nextButton').html("Next");
+
+	console.log("evalBackNext() called!");
 	
 	if(stage > 5) {
 		$('#nextButton').hide();
+		$('#stageText').html("Your Estimate");
 		$('#estimateDetails').fadeIn(300);
 	}
-	else $('#nextButton').show();
+	else {
+		$('#nextButton').show();
+		$('#estimateDetails').hide();
+	}
 }
 
 function nextStage() {
@@ -376,13 +394,12 @@ function nextStage() {
 	$('#owl-csp').html("");	
 	
 	if(stage==6) {
-		// Summary Stage
+		evalBackNext();
 		
 	} else {
 		loadStage(stage);		
 	}
 	
-
 }
 
 function previousStage() {

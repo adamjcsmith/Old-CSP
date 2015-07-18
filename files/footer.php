@@ -1,3 +1,4 @@
+
 	<?php 
 		// Close content box if it's not the homepage:
 		if(!isset($home)) { echo '</div></body>'; }

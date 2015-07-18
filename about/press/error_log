@@ -170,3 +170,11 @@
 [08-Jul-2015 14:49:55 Europe/London] PHP Warning:  mysql_connect(): Access denied for user 'web120-csp'@'10.0.29.5' (using password: YES) in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 174
 [08-Jul-2015 14:49:55 Europe/London] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 176
 [08-Jul-2015 14:49:55 Europe/London] PHP Warning:  mysql_query() expects parameter 2 to be resource, boolean given in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 180
+[16-Jul-2015 11:34:26 Europe/London] PHP Warning:  mysql_connect(): Access denied for user 'web120-csp'@'10.0.29.5' (using password: YES) in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 70
+[16-Jul-2015 11:34:26 Europe/London] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 72
+[16-Jul-2015 11:34:26 Europe/London] PHP Warning:  mysql_query(): Access denied for user ''@'localhost' (using password: NO) in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 76
+[16-Jul-2015 11:34:26 Europe/London] PHP Warning:  mysql_query(): A link to the server could not be established in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 76
+[16-Jul-2015 11:34:26 Europe/London] PHP Warning:  mysql_num_rows() expects parameter 1 to be resource, boolean given in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 78
+[16-Jul-2015 11:34:26 Europe/London] PHP Warning:  mysql_connect(): Access denied for user 'web120-csp'@'10.0.29.5' (using password: YES) in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 174
+[16-Jul-2015 11:34:26 Europe/London] PHP Warning:  mysql_select_db() expects parameter 2 to be resource, boolean given in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 176
+[16-Jul-2015 11:34:26 Europe/London] PHP Warning:  mysql_query() expects parameter 2 to be resource, boolean given in /home/cspprofe/public_html/cspdetailing.com/files/currencyconverter.php on line 180

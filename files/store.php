@@ -14,6 +14,7 @@
 		    <div class="storemenu">
                 <li class="mobileshow"><a href="/range">Store Home</a></li>';
 
+				/*
                 while($row = $result->fetch_assoc()){
 					$catname = str_replace(' ', '', $row['name']);
 					
@@ -22,11 +23,18 @@
 					
                     echo '<li class="mobilehide"><a href="/range/#'.$catname.'">' . $row['name'] . '</a></li>';
                 }
+				*/
+				
+				echo '<li class="mobilehide"><a href="/range/">CSP Launch Pre-Sale</a></li>';
 
                 echo '
-                <li class="floatright selected snipcart-checkout mobilehide"><a href="#">Checkout</a></li>
-                 <div id="basketicon"><a class="snipcart-checkout windowlink"></a><span class="snipcart-summary"><b><span class="snipcart-total-price"></span></b></span></div>
-			   <li class="floatright mobilehide"><a id="deliverybutton" href="/range/delivery/">Delivery Info</a></li>
+			   <div id="basketicon">
+					<i class="fa fa-shopping-cart fa-fw fa-lg ind"></i>
+					<span class="snipcart-summary snipcart-checkout">
+						<span class="snipcart-total-price snipcart-checkout"></span>
+					</span>
+			   </div>
+			   <li class="right mobilehide"><a id="deliverybutton" href="/range/delivery/">Delivery & Returns</a></li>
 		    </div>
 		</div>
 	';

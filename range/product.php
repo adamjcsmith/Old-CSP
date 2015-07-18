@@ -5,16 +5,10 @@
 	$subpage = 'Exterior Collection';
 	$catlink = '/range/';
 	$productid = $_GET["id"];
-	//$bannerurl = '/images/backgrounds/warehouse.jpg';
-	//$titletext = "testing";
 	$yshift = -300;
 	$xshift = 0;
 	$store = true;
-	include '../files/php/functions.php';
-	include '../files/header.php';  // Use '../../files/header.php' if the product directory is beyond /product/
-	include '../files/currencyconverter.php'; // Same as above
-	// As a failsafe, check when the last currency table was updated:
-	$x = new CurrencyConverter('localhost','cspprofe_csp','adamlancaster2013','cspprofe_main','currencytable');
+
  	// Connect to the Database.
 	$dbhandle = mysql_connect("localhost", "cspprofe_csp", "adamlancaster2013") or die("Unable to connect to MySQL");
 	mysql_set_charset('utf8',$dbhandle);
@@ -22,12 +16,19 @@
 	// Get product information from database and assign to variables.
 	$productdetails = mysql_query("SELECT * FROM product WHERE id = $productid");
 	while ($row = mysql_fetch_array($productdetails)) {
+		
 		$productname = $row['name'];
 		$longdescription = $row['description'];
 		//$videolink = $row["videolink"];
 		$subtitle = $row['subtitle'];
 		$directions = $row['directions'];
+		$enabled = $row['enabled'];
+		$mainimage = $row['mainimg'];
 	}
+	
+
+	
+	
 	// Get volume information.
 	$volumeinfo = mysql_query("SELECT DISTINCT price.product, price.volume, price.price, price.quantity, volume.type FROM volume, price, product WHERE (price.product = $productid) AND (price.volume = volume.amount)");
 	$volumesavailable = mysql_num_rows($volumeinfo);
@@ -45,18 +46,27 @@
     // Get video information.
     $videos = mysql_query("SELECT * FROM video WHERE product = $productid");
     $num_videos = mysql_num_rows($videos);
+	
+	include '../files/php/functions.php';
+	include '../files/header.php';  // Use '../../files/header.php' if the product directory is beyond /product/	
+
 	?>
+	
+	<!-- Javascript -->
 	<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
 	<h2 class="dim thin centre mobileshow"><?php echo $productname; ?></h2>
 	<?php
 		// Add static versions of the product volumes in compliance with snipcart's api:
+		$currentQuantity;
 		while($row = mysql_fetch_array($volumeinfo)) {
+			$currentQuantity = $row["quantity"];
 			echo '<a href="#" style="display: none;" class="snipcart-add-item" ';
 			echo 'data-item-id="' .$productid. '-' .$row["volume"]. '" ';
 			echo 'data-item-name="'.$productname.' ('.$row["volume"].' '.$row["type"].')" ';
 			echo 'data-item-price="'.$row["price"].'" ';
 			echo 'data-item-url="/range/product/'.$productid.'" ';
-			echo 'data-item-description="'.$row["volume"].' '.$row["type"].' version.">';
+			echo 'data-item-description="'.$row["volume"].' '.$row["type"].' version." ';
+			echo 'data-item-max-quantity="'.$row["quantity"].'">';
 			echo '</a>';
 		}
 		mysql_free_result($volumeinfo);
@@ -74,6 +84,7 @@
 	<div class="clear"></div>
 	<?php echo $subtitle; ?></h5>
 	<!-- Image List -->
+	
 	<div class="div50 upspace" style="padding-left: 0;">
 	<ul class="bxslider">
          <?php
@@ -112,18 +123,26 @@
 				//$totalQuantity = 0;
 				mysql_free_result($volumeinfo);
 				//echo $totalQuantity;
-			if($minimumprice == '0' || $minimumprice == '') {
+			if($minimumprice == '0' || $minimumprice == '' || $enabled == '0') {
 				echo '<h6 class="dim" style="display: inline-block;">Available soon</h6>';
 				echo '';
 			}
+			else if($currentQuantity == 0) {
+				echo '<h6 class="dim" style="display: inline-block;">Out of stock. Check back soon.</h6>';
+			}
 			else {
+				
+				if($currentQuantity < 10) {
+					echo '<h6 style="color: orange; display: inline-block;"><i class="fa fa-fire" style="margin-right: 10px; "></i> Hurry, only ' . $currentQuantity . ' left in stock.</h6>';
+				}
+				
                     echo '<div class="canvas centre upspace">';
                     echo '<div id="dd" class="wrapper-dropdown-3" tabindex="1">
                                                <span>'.formatVolume($minimumvolume).' '.$minimumtype.' - £'.$minimumprice.'</span>
                                                <ul class="dropdown">';
 				while ($row = mysql_fetch_array($volumeinfo)) {
 					echo '
-                         <li><a href="#"><i class="icon-large"></i>'.formatVolume($row["volume"]).' '.$row["type"].' - £'.$row["price"].'</a></li>
+                         <li><a href="#"><i class="icon-large"></i>' . formatVolume($row["volume"]).' - £'.$row["price"].'</a></li>
                          <script>
                             // Add to Array
                             options.push({"volume":'.$row["volume"].', "type":"'.$row["type"].'", "price":'.$row["price"].' });
@@ -206,7 +225,7 @@
 					$videowidth = (100 / $num_videos);
 					if($videowidth < 33) $videowidth = 33;
 					while($videoresults = mysql_fetch_array($videos)) {
-						echo '<div class="js-lazyYT inline-block" data-youtube-id="' . $videoresults["url"] . '" data-width="'.$videowidth.'%" data-height="300"></div>';
+						echo '<div class="lazyYT inline-block" data-youtube-id="' . $videoresults["url"] . '" data-width="'.$videowidth.'%" data-height="300"></div>';
 					}
 				?>
 			</div>

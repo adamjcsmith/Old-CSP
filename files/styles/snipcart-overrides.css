@@ -24,3 +24,12 @@
     color: black;
     border: solid 1px #5e5e5e;
 }
+
+.icon-Snipcart:before, 
+.icon-Snipcart-2:before, 
+.icon-Snipcart-3:before, 
+.icon-Snipcart-4:before, 
+.icon-Snipcart-5:before, 
+.icon-Snipcart-6:before, 
+.icon-Snipcart-7:before, 
+.icon-snipcart-close:before { font-family: snipcart;}

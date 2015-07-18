@@ -70,6 +70,46 @@
 
 <div class="clear"></div>
 
+<!-- CSP Pre-Sale here -->
+
+<style>
+	.windowlink {
+		background-color: transparent !important;
+	}
+	.special-offer-link {
+		color: black !important;
+	}
+</style>
+
+<div class="subheading" style="margin: 2vh 0 0 0; padding: 20px 0;">
+	<h2>CSP LAUNCH PRE-SALE</h2>
+</div>
+
+<div class="canvas downspace" style="padding-top: 30px;">
+
+<?php
+	if(!$productquery = $db->query("SELECT * FROM product WHERE specialOffer = 1")){
+        		die('There was an error running the query [' . $db->error . ']'); }
+				
+	while($prodrow = $productquery->fetch_assoc()) {
+		echo '
+		    <div class="div20">
+		        <div id= "' .$prodrow["id"].'-image" class="image downspace0 gridbox" style="background-image: url(/images/products/' .$prodrow["id"]. '/' .$prodrow["mainimg"]. ');">
+		            <a id="' .$prodrow["id"]. '" class="windowlink" href="/range/product/' .$prodrow["id"]. '/"></a>
+		        </div>
+		        <h4 class="prodlabel centre downspace0"><a class="special-offer-link" href="/range/product/' .$prodrow["id"]. '/">'.$prodrow["name"]. '</a></h4>
+		    </div>';
+	}
+			
+?>
+	
+</div>
+
+<div class="clear"></div>
+
+
+
+
 <?php
 	while($catrow = $categories->fetch_assoc()){
 		// for each row, run a query where ^^ and do it's own while.
