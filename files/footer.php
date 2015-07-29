@@ -42,7 +42,7 @@
 							<div class="div25" style="min-height: 0;">
 								<h4>© 2015 CSP Detailing</h4>
 								<h4><a href="/terms/" class="white upspace">TERMS & CONDITIONS</a></h4>
-								<h4><a href="/privacy/" class="white">PRIVACY</a></h4>
+								<h4><a href="/privacy/" class="white">PRIVACY & COOKIE POLICY</a></h4>
 							</div>
 						</div>				
 					</div>
@@ -64,10 +64,10 @@
 		</div>		
 	
 		<div class="mobileshow">
-			<div class="left">
+			<div class="left mb2 ml2">
 				<h4 class="">© 2015 CSP Detailing </h4>
 			</div>	
-			<div class="right">	
+			<div class="right mb2 mr2">	
 				<a class="social-icons" href="https://www.facebook.com/cspdetailingsystem"><i class="fa fa-facebook-square fa-fw"></i></a>					
 				<a class="social-icons" href="https://www.twitter.com/cspdetailing"><i class="fa fa-twitter fa-fw"></i></a>
 				<a class="social-icons" href="https://www.youtube.com/c/cspdetailing"><i class="fa fa-youtube-square fa-fw"></i></a>

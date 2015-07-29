@@ -1,5 +1,8 @@
 <?php
 
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+
 	// DB Connection Here
 	$db = new mysqli('localhost', 'cspprofe_csp', 'adamlancaster2013', 'cspprofe_products');
 	if($db->connect_errno > 0){ die('Unable to connect to database [' . $db->connect_error . ']'); }
@@ -25,7 +28,9 @@
                 }
 				*/
 				
-				echo '<li class="mobilehide"><a href="/range/">CSP Launch Pre-Sale</a></li>';
+				echo '<li class="mobilehide"><a href="/range/#Launch500mls">Launch 500mls</a></li>';
+				echo '<li class="mobilehide"><a href="/range/#LaunchPolish">Launch Polish System</a></li>';
+				echo '<li class="mobilehide"><a href="/range/#Exterior">Products Coming Soon</a></li>';
 
                 echo '
 			   <div id="basketicon">
@@ -34,9 +39,17 @@
 						<span class="snipcart-total-price snipcart-checkout"></span>
 					</span>
 			   </div>
-			   <li class="right mobilehide"><a id="deliverybutton" href="/range/delivery/">Delivery & Returns</a></li>
+			   <li class="right mobilehide"><a id="deliverybutton" href="/range/delivery/"><i class="fa fa-truck"></i> Delivery & Returns</a></li>
 		    </div>
 		</div>
 	';
-
+	
+	// Store Functions:
+	include 'storeFunctions.php';
+	
 ?>
+<!--
+	<div class="d100 centre mb2" style="background: lightyellow;">
+		<p style="font-size: 22px; padding: 3%; "><i class="fa fa-exclamation-triangle fa-lg mr5"></i>Currently experiencing some issues with payments. Bear with us while we fix the problem, we'll be back up soon.</p>
+	</div>
+-->

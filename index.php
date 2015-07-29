@@ -27,8 +27,8 @@
 			<div class="canvas centre showcase-overlay">
 				<div class="showcase-container">
 					<iframe width="100%" height="100%" class="mobileshow" style="margin-bottom: 5%;" src="//www.youtube.com/embed/lHmFK_zIr3A?modestbranding=1&playsinline=1&showinfo=0&rel=0&controls=0" frameborder="0" allowfullscreen></iframe>
-					<h1 class=" showcase-title">CSP Detailing System</h1>
-					<h3 class="showcase-subtitle">#ScientificallyAdvanced</h3>
+					<h1 class=" showcase-title white">CSP Detailing System</h1>
+					<h3 class="showcase-subtitle white">#ScientificallyAdvanced</h3>
 					<a href="/contacts/" class="showcase-button">
 						<i class="fa fa-phone mobilehide" style="margin-right: 10px;"></i>
 						Drop us a Line	
@@ -37,7 +37,7 @@
 						<i class="fa fa-shopping-cart mobilehide" style="margin-right: 10px;"></i>							
 						See our Range
 					</a>			
-					<h3 class="mobilehide" style="position: absolute; bottom: 13%; left: 0; right: 0;">
+					<h3 class="mobilehide white" style="position: absolute; bottom: 13%; left: 0; right: 0;">
 						<i class="fa fa-arrow-down" style="margin-right: 30px;"></i>						
 						Scroll down for more
 						<i class="fa fa-arrow-down" style="margin-left: 30px;"></i>
@@ -46,6 +46,22 @@
 			</div>
 			<div class="clear"></div> 
 		</div> 
+		
+		<!-- Innovation Showcase -->
+		<div class="section" style="background: white; border-bottom: 0px dashed #ccc;">
+			<div class="canvas" style="max-width: 1200px; margin: 0 auto;">
+				<div class="div60" style="text-align: right;">
+					<h1 class="upspace2 showcase-heading">Innovation Showcase</h1>
+					<h1 class="showcase-subtitle upspace">The Innovation Showcase is the centrepiece of Venturefest Manchester and is set to feature some of the region's most innovative businesses.</h1>
+					<h1 class="showcase-subtitle upspace">CSP have successfully progressed through the selection process and are now in the final.</h1>
+				</div>			
+				<div class="div40" style="padding: 6%; text-align: center;">
+					<img class="showcase-img" src="http://venturefestmanchester.com/media/1591/venturefest-manchester.jpg?anchor=center&mode=crop&width=320&height=154&rnd=130819665510000000" class="showcase-img">
+					<img class="showcase-img" src="http://venturefestmanchester.com/media/1592/venturefest-logos2.png?anchor=center&mode=crop&width=585&height=101&rnd=130819665510000000" class="showcase-img">
+					
+				</div>
+			</div>
+		</div>	
 		
 		<!-- In the Press -->
 		<div class="section" style="background: white; border-bottom: 0px dashed #ccc;">
@@ -56,7 +72,7 @@
 					<h1 class="showcase-subtitle upspace">The magazine represents the largest chamber of commerce in the UK.</h1>
 					<h1 class="showcase-subtitle upspace downspace">Article contents: CSP Detailing System and CSP Particle Protection System.</h1>
 				</div>			
-				<div class="div40" style="padding: 6%; text-align: center;">
+				<div class="div40" style="padding: 4%; text-align: center;">
 					<a href="/files/53degrees-article.pdf"><img src="/images/homepage/Overlay2.png" class="showcase-img"></a>
 					<h1 class="showcase-subtitle upspace downspace"><a class="" href="/files/53degrees-article.pdf">Click to read the full article (PDF)</a></h1>
 				</div>
@@ -64,9 +80,9 @@
 		</div>	
 
 		<!-- Sponsorship -->
-		<div class="section" style="background: rgba(0,99,150,0.1); border-bottom: 0px dashed #ccc; text-align: center;">
+		<div class="section" style="">
 			<div class="canvas" style="max-width: 1200px; margin: 0 auto;">
-				<div class="div60">
+				<div class="div60" style="text-align: right;">
 					<h1 class="upspace2 showcase-heading">CSP SPONSORS ONE OF THE UK'S BRIGHTEST TALENTS</h1>
 					<h1 class="showcase-subtitle upspace downspace" style="display: none;">Nick Moore, talented driver, is being sponsored by CSP Detailing.</h1>
 					<img src="/images/homepage/nickmoorelogo.png" style="width: 60%; margin-top: 5%; margin-bottom: 3%;">	
@@ -92,4 +108,23 @@
 				</div>				
 			</div>
 		</div>
+		
+		
+		<!-- New First section -->
+		
+		<section style="display: none;">
+		
+			<div class="div60 centre white" style="background: rgba(0,99,150,0.7);">
+			
+				<h1>THE WINNING FORMULA</h1>
+				
+			</div>
+			<div class="div40" style="background: rgba(0,99,150,0.7);"></div>
+		
+		
+		</section>
+		
+		
+		
+		
 	<?php include 'files/footer.php'; ?>

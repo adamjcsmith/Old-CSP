@@ -62,7 +62,7 @@
 	<!-- jQuery and JavaScript -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="//code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-	<script type="text/javascript" id="snipcart" src="https://cdn.snipcart.com/scripts/snipcart.js" data-autopop="false" data-api-key="YjNmNzdiODEtM2UwZi00MjFhLWI4MmItYTI0Njc5NWVkZjk0"></script>	
+	<script type="text/javascript" id="snipcart" src="https://cdn.snipcart.com/scripts/snipcart.js" data-autopop="true" data-api-key="MWUyNTcwZGQtNDFmMi00MGUwLWFjYjEtYWJkZjE3MjRiZGU3"></script>	
 	<script type="text/javascript" src="/files/menu/tinydropdown.js"></script>
 	<script type="text/javascript" src="/files/LazyLoadYT/lazyYT.js"></script>
 	<script src="/files/readmore/readmore.min.js"></script>
@@ -104,9 +104,7 @@
 	
 <body>
 	
-	<div id="newCSPMenu" class="centre" style="width: 100%; z-index: 110; height: auto; background: white; color: white; padding: 0 10px; position: absolute; top: 45; left: 0; display: none;">
-
-		<hr style="margin-bottom: 10px; margin-left: 0; margin-right: 0;">
+	<div id="newCSPMenu" class="centre">
 	
 		<div class="menuDiv50" style="width: 51.5%; padding-right:3%;">	
 			<a href='/join/'><li><i class="fa fa-users fa-fw ind"></i> Join Team CSP</li></a>
@@ -163,12 +161,12 @@
 
 	// Customised page headers:
 	if(isset($contactmode))	include '../files/contact.php';
-	if(isset($store)) include '../files/store.php';			
+	if(isset($store)) include '../files/store.php';	
 
 	// Generic Page titles:
 	if(isset($pagetitle)) {
       if(isset($bannerurl) && !isset($contactmode)) {
-		echo '<div class="pagebannerbg mobilehide downspace" style="background:url(' .$bannerurl. '); background-position: center '.$yshift.'px;">
+		echo '<div class="pagebannerbg mobilehide" style="background:url(' .$bannerurl. '); background-position: center '.$yshift.'px;">
 					<div class="pagebanner">
 					</div>
 				</div>
@@ -176,11 +174,9 @@
 		}
 
 		echo '
-		<hr class="mobileshow">
-		<div class="title centre">
-				<h2>' .$pagetitle. '</h2>
-			</div>
-		<hr class="mobileshow" style="margin-bottom: 10px;">';
+		<div class="centre cspblue mt5 mb5">
+				<h1>' .$pagetitle. '</h1>
+		</div>';
 	}
 
 ?>

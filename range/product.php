@@ -24,6 +24,7 @@
 		$directions = $row['directions'];
 		$enabled = $row['enabled'];
 		$mainimage = $row['mainimg'];
+		$category = $row['category'];
 	}
 	
 
@@ -33,7 +34,7 @@
 	$volumeinfo = mysql_query("SELECT DISTINCT price.product, price.volume, price.price, price.quantity, volume.type FROM volume, price, product WHERE (price.product = $productid) AND (price.volume = volume.amount)");
 	$volumesavailable = mysql_num_rows($volumeinfo);
 	// Find the smallest priced volume (for 'Available from:'):
-	$minpricequery = mysql_query("SELECT MIN(price) as minprice, type, volume FROM price, product, volume WHERE (price.product = $productid) AND (price.volume = volume.amount)");
+	$minpricequery = mysql_query("SELECT MIN(price.price) as minprice, type, volume FROM price, product, volume WHERE (price.product = $productid) AND (price.volume = volume.amount)");
 	$numberofprices = mysql_num_rows($minpricequery);
 	while($minpriceloop = mysql_fetch_array($minpricequery)) {
 		$minimumprice = $minpriceloop['minprice'];
@@ -54,23 +55,39 @@
 	
 	<!-- Javascript -->
 	<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
-	<h2 class="dim thin centre mobileshow"><?php echo $productname; ?></h2>
+	<h2 class="dim thin centre mobileshow mt5"><?php echo $productname; ?></h2>
 	<?php
 		// Add static versions of the product volumes in compliance with snipcart's api:
 		$currentQuantity;
+		
+		// NOT NEEDED WHILE ITEM.ADD IS NOT BEING USED AS OF 27/07/2015:
+		
 		while($row = mysql_fetch_array($volumeinfo)) {
 			$currentQuantity = $row["quantity"];
+			
+		/*			
 			echo '<a href="#" style="display: none;" class="snipcart-add-item" ';
-			echo 'data-item-id="' .$productid. '-' .$row["volume"]. '" ';
+			echo 'data-item-id="' .$productid. '" ';
 			echo 'data-item-name="'.$productname.' ('.$row["volume"].' '.$row["type"].')" ';
 			echo 'data-item-price="'.$row["price"].'" ';
+			if($productid == 209 || $productid == 210) echo 'data-item-price-cspvip="49.00" ';			
+			
 			echo 'data-item-url="/range/product/'.$productid.'" ';
 			echo 'data-item-description="'.$row["volume"].' '.$row["type"].' version." ';
-			echo 'data-item-max-quantity="'.$row["quantity"].'">';
+			
+			if($productid == 209 || $productid == 210) echo 'data-item-cspvip="49.00" ';
+
+			echo 'data-item-max-quantity="2">';
+			
 			echo '</a>';
+			
+		*/			
 		}
 		mysql_free_result($volumeinfo);
-	?>
+
+
+
+		?>
 	<?php 
 		// Default Product Details:
 		echo '<script>
@@ -79,7 +96,8 @@
 				productType = "'.$minimumtype.'";
 				productPrice = "'.$minimumprice.'";
 				productID = "'.$productid.'";
-		   </script>' 
+				productMaxQuantity = "2";
+		   </script>';
 	?>
 	<div class="clear"></div>
 	<?php echo $subtitle; ?></h5>
@@ -88,12 +106,17 @@
 	<div class="div50 upspace" style="padding-left: 0;">
 	<ul class="bxslider">
          <?php
+		 echo "<li style='display: inline !important; text-align: center !important;'><img src='/images/products/" .$productid. "/" . $mainimage . "' /></li>";
+		 
           $filenumber = 0;
                try {
                     $dir = new DirectoryIterator("../images/products/".$productid."/");
                     foreach ($dir as $fileinfo) {
                         if (!$fileinfo->isDot()) {
                             $filenumber += 1;
+							
+							if($fileinfo->getFilename() == $mainimage) continue;
+							
                             echo "<li style='display: inline !important; text-align: center !important;'><img src='/images/products/" .$productid. "/" . $fileinfo->getFilename() . "' /></li>";
                         }
                     }
@@ -111,23 +134,29 @@
 				if($numberofprices > 1 ) $prefixtext = "From";
 				else $prefixtext = "";
 			echo '<h6 class="dim mobilehide" style=" margin-top: 10px; display: inline-block;">'.$prefixtext.' <span class="cspblue">£'.$minimumprice.'</span></h6>'; ?>
-			<div class="linelight mobilehide"></div>
-            <h5 id ="descriptionblock" class="" style="letter-spacing: -0.5px;">
+			<!--<div class="linelight mobilehide"></div>-->
+            <h5 id ="descriptionblock" class="" style="letter-spacing: -0.5px; background: #f1f1f1; border-top: solid 5px #ccc; padding: 15px; margin-top: 30px; ">
 				<?php 
 				//$tasterdescription = substr($longdescription, 0, 30);
 				echo $longdescription; ?>
 			</h5>
             <div class="linelight"></div>
             <?php
-				// Check quantity:
-				//$totalQuantity = 0;
-				mysql_free_result($volumeinfo);
-				//echo $totalQuantity;
+
+			mysql_free_result($volumeinfo);
+			
+			$bundleCheck = false;
+			if(checkIfBundle($productid)) {
+				if(!checkBundleChildren($productid)) {
+					$bundleCheck = true;
+				}
+			}
+
 			if($minimumprice == '0' || $minimumprice == '' || $enabled == '0') {
 				echo '<h6 class="dim" style="display: inline-block;">Available soon</h6>';
 				echo '';
 			}
-			else if($currentQuantity == 0) {
+			else if($currentQuantity == 0 || $bundleCheck) {
 				echo '<h6 class="dim" style="display: inline-block;">Out of stock. Check back soon.</h6>';
 			}
 			else {
@@ -138,7 +167,7 @@
 				
                     echo '<div class="canvas centre upspace">';
                     echo '<div id="dd" class="wrapper-dropdown-3" tabindex="1">
-                                               <span>'.formatVolume($minimumvolume).' '.$minimumtype.' - £'.$minimumprice.'</span>
+                                               <span>'.$productname.' - £'.$minimumprice.'</span>
                                                <ul class="dropdown">';
 				while ($row = mysql_fetch_array($volumeinfo)) {
 					echo '
@@ -150,7 +179,21 @@
 					';
 				}
 				echo '</ul></div>
-				<div id="addtobasket" class="addtobasket" onclick="addToBasket();">Add to Basket</div>
+				<!--<div id="addtobasket" class="addtobasket" onclick="addToBasket();">Add to Basket</div> -->
+				<a href="#" class="addtobasket snipcart-add-item"
+				
+					data-item-id="' .$productid. '" 
+					data-item-name="' .$productname. '" 
+					data-item-price="' .$minimumprice. '"'; 
+					
+					if($productid == 209 || $productid == 210) echo 'data-item-cspvip="49.00" ';
+					if($productid == 209 || $productid == 210) echo 'data-item-price-cspvip="49.00" ';					
+					
+					echo 'data-item-url="/range/product/' .$productid. '" 
+					data-item-description=""					
+					data-item-max-quantity="2"
+				
+				>Add to Basket</a>
 				</div>
 				';
 			}
@@ -184,11 +227,16 @@
 					<h6 class="downspace centre dim">Gallery</h6>
 					<div id="bx-pager" style="text-align: center;">
 						<?php
-						   $iterator = 0;
+							echo '<a data-slide-index="0" href=""><img src="/images/products/' .$productid. '/' . $mainimage. '" /></a>';
+						
+						   $iterator = 1;
 							try {
 						   $dir = new DirectoryIterator("../images/products/".$productid."/");
 							foreach ($dir as $fileinfo) {
 								if (!$fileinfo->isDot()) {
+									
+									if($fileinfo->getFilename() == $mainimage) continue;
+									
 									echo '<a data-slide-index="' .$iterator. '" href=""><img src="/images/products/' .$productid. '/' . $fileinfo->getFilename(). '" /></a>';
 									$iterator += 1;
 								}

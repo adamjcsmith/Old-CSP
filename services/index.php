@@ -21,11 +21,10 @@
 	.selectBox {
 		display: block;
 		width: 100%;
-		height: 20vh;
+		height: 32vh;
 		background: rgba(0,99,150,0);
 		color: #006396;
 		opacity: 1;
-		padding: 35px;
 	}
 
 	.selectBox:hover {
@@ -35,10 +34,11 @@
 
 	.copyBox {
 		height: auto !important;
-		background: rgba(0,99,150,0);
-		color: #5e5e5e;
-		margin-bottom: 20px;
-		padding: 20px;
+		background: rgba(0,0,0,0.3);
+		color: white;
+		margin-bottom: 0px;
+		padding: 15px;
+		margin-top: -55px;
 	}
 
 	.copyBox p, .copyBox h3 {
@@ -102,25 +102,29 @@
 		margin-top: 10px;
 	}
 	
+	#buttonArray { margin-top: -60px; }
+	#buttonArray button { color: rgba(0,99,150,0.7); border-color: white; background: white; }
+	
 	@media (max-width: 500px) {
 		.div25 { width: 100% !important; }
 		.selectBox { height: 40vh; }
+		#buttonArray { margin-top: 20px; }
 	}
 	
 </style>
 
 
-<div id="peContainer" class="div100">
+<div id="peContainer" class="div100" style="margin-bottom: 10vh;">
 	
 	<div id="msg1" class="div100 cf">
 		<!--<div id="stageNumber" class="stageCircle mb2 ib">1</div>-->
 		
-		<div id="stageContext" class="div100 centre" style="display: none;">	
-			<h2 id="stageText" class="cspblue" style="font-size: 30px; font-weight: normal; font-family: 'Lato', sans-serif; text-transform: none;">Select your car size</h2>
+		<div id="stageContext" class="div100 centre" style="display: none; background: rgba(0,99,150,0.7); color: white; border-radius: 0px; margin-bottom: 5px; ">	
+			<h2 id="stageText" class="" style="font-size: 28px; font-weight: 300; font-family: 'Oswald', sans-serif; text-transform: uppercase; margin-bottom: 20px;">Select your car size</h2>
 			
-			<div id="stageDivider" class="line" style=""></div>
+			<div id="stageDivider" class="line mobileshow" style=""></div>
 			
-			<div style="margin-top: 20px;">
+			<div id="buttonArray">
 				<button id="backButton" onclick="previousStage();" style="display: none; position: relative; z-index: 100; float: left;">Back</button>		
 				<button id="nextButton" onclick="nextStage();" style="display: none; margin-left: 10px; position: relative; z-index: 100; float: right;">Next</button>	
 			</div>
@@ -145,7 +149,7 @@
 		<div id="pre" style="width: 100%; background: rgba(0,99,150,0.7); padding: 20px; color: white;">
 		
 			<h1>CSP Price Estimator</h1>
-			<div class="line" style="background: rgba(255,255,255,0.5);"></div>		
+			<div class="line" style="background: rgba(255,255,255,0.7);"></div>		
 		
 			<div style="padding: 20px; box-sizing: border-box;">
 				<div class="div70">
@@ -197,8 +201,8 @@ var stageDetails = [
 		{title: 'Deep scratches', copy: '', image: "/images/services/paintwork-heavy.JPG"}
 	]},
 	{title: "desired level of correction", type: "single", selected: '', options: [
-		{title: 'Single stage polish', copy: ''},
-		{title: 'Two-stage enhancement', copy: ''},
+		{title: 'Single stage polish', copy: '', image: "/images/services/singlestage.png"},
+		{title: 'Two-stage enhancement', copy: '', image: "/images/services/twostage.png"},
 		{title: 'Full correction', copy: ''},
 		{title: 'Wet sanding', copy: ''}
 	]},
@@ -232,7 +236,7 @@ var stageDetails = [
 			"/images/services/evoque/wheel.jpg",
 			"/images/services/rangerover/wheel.jpg"
 		]},
-		{title: "Convertible roof fabric", copy: "", price: 85, image: "/images/products/11/HighGloss-500ml.png"},		
+		{title: "Convertible roof fabric", copy: "", price: 85, image: "/images/services/convertible-external.png"},		
 	]},
 	{title: "interior extras", type: "multi", selected: [], options: [
 		{title: "Leather Fabric or Alcantara Seats", copy: "", price: 85, image: [
@@ -259,6 +263,7 @@ function loadStage(id) {
 	$('#stageText').html( (stage+1) +  "/" + stageDetails.length + ": select " + stageDetails[id].title);
 	
 	evalBackNext();
+	var singleID;
 	
 	for(var i=0; i<stageDetails[id].options.length; i++) {
 		// First check if there is a price:
@@ -283,20 +288,37 @@ function loadStage(id) {
 		}
 		
 		insertBlock(i, stageDetails[id].options[i].title, stageDetails[id].options[i].copy, stageDetails[id].options[i].price, image);
-		if(stageDetails[id].selected.indexOf(i) != -1 || stageDetails[id].selected === i) {
-			selectOption(i);
-		}
-	}	
+		
+		
+			if(stageDetails[id].selected.indexOf(i) != -1 || stageDetails[id].selected === i) {
+				
+				
+				
+				if(stageDetails[id].type!=="single") {
+					selectOption(i);
+				}
+				else {
+					singleID = i;
+				}
+				
+			}
+
+
+	}
+
+	if(stageDetails[stage].type=="single" && stageDetails[stage].selected.length > 0) {
+		selectOption(singleID);
+	}
 }
 
 function insertBlock(id, title, copy, price, image) {
 	
 	if(price != '') price = "£" + price.toFixed(2);
 	
-	$('#owl-csp').append("<div class='div25' style='display: inline-block; vertical-align: top;' id='" + id + "'><a class='selectBox c' style='background: url(" + image + "); background-size: cover; background-position: center center;'></a><a class='selectBox copyBox c'><h3>" + title + "</h3><p style='margin-left: 10px'>" + copy + "</p> <h3 style='display: block; margin-top: 10px;'>" + price + "</h3>   </a> </div>");
+	$('#owl-csp').append("<div class='div33' style='display: inline-block; vertical-align: top;' id='" + id + "'><a class='selectBox c' style='background: url(" + image + "); background-size: cover; background-repeat: no-repeat; background-position: center center;'></a><a class='selectBox copyBox c'><h3>" + title + "</h3><p style='margin-left: 10px'>" + copy + "</p> <h3 style='display: inline; margin-top: 10px;'>" + price + "</h3>   </a> </div>");
 }
 
-$('#owl-csp').on('click', '.div25', function(){
+$('#owl-csp').on('click', '.div33', function(){
 	if(stageDetails[stage].type == "single") {
 		unselectAll();
 		selectOption($(this).attr("id"));
@@ -409,8 +431,14 @@ function previousStage() {
 }
 
 function selectOption(id) {
-	$('#' + id).find('.selectBox').css('backgroundColor', 'rgba(0,99,150,1)');
+	$('#' + id).find('.selectBox').css('backgroundColor', 'rgba(0,99,150,0.7)');
 	$('#' + id).find('.selectBox').css('color', 'white');
+
+	// Check other boxes here:
+	if(stageDetails[stage].type == "single") {
+		$('.div33').css({opacity: 0.4});
+		$('#' + id).css("opacity", "");		
+	}
 }
 
 function unselectAll() {

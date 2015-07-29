@@ -58,7 +58,8 @@
 #logo {
 	margin: 0;
 	margin-left: 10px;
-	margin-top: 10px;
+	margin-top: 7px;
+	max-width: 65px;
 }
 
 #headwrap { padding: 0 !important;  margin-bottom: 0 !important; height: 0;}

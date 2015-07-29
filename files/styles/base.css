@@ -7,7 +7,7 @@ img { border: 0; max-width: 100%; }
 html, body { height: 100%; }
 
 #container { min-height: 54%; position: relative; }
-#contentbox { max-width: 1300px; margin: 0 auto; padding: 1px 0 167px 0; }
+#contentbox { max-width: 1600px; margin: 0 auto; padding: 1px 0 167px 0; }
 
 .fix { min-height: 95% !important; }
 .clear { clear: both; }
@@ -19,29 +19,27 @@ a { color: #006296; text-decoration: none; }
 a:hover { text-decoration: underline; }
 h1, h2, h3, h4 { font: 500 16px 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0px; }
 p, h5, h6 { font: 500 16px 'Lato', sans-serif; letter-spacing: 0px; }
-h1 { font-size: 50px; font-weight: 500; }
-h2 { font-size: 40px; font-weight: 300; }
+h1 { font-size: 40px; font-weight: 300; }
+h2 { font-size: 30px; font-weight: 300; }
 h3 { font-size: 18px; }
 h4 { font-size: 12px; }
 h5 { font-size: 16px; }
 h6 { font-size: 19px; }
 
-.indent { padding-left: 1.6em; color: #5e5e5e; }
-.title { max-width: 1180px; margin: 20px auto; color: #006296; padding: 5px 10px 10px 0; }
 .subheading { width: 100%; padding: 10px; color: #006296; margin: 5vh 0 30px 0; font: 300 22px 'Oswald', sans-serif; text-transform: uppercase; border-bottom: rgba(0,99,150,0.3) 1px solid; text-align: center; }
 
 /* ---------- Header + Footer ---------- */
 
 #headwrap { width: 100%; }
-#header { max-width: 1300px; margin: 0px auto; }
-#logo { max-width: 70px; float: left; margin: 25px 15px 0 10px; }
-.rightpanel { float: right; margin-top: 32px; }
+#header { max-width: 1600px; margin: 0px auto; }
+#logo { max-width: 70px; float: left; margin: 25px 15px 0 15px; }
+.rightpanel { float: right; margin-top: 32px; margin-right: 15px; }
 .pagebannerbg { background: url(/images/backgrounds/wheel.jpg); height: 350px; width: 100%; float: left; position: relative; }
 .pagebanner { width: 100%; height: 100%; opacity: 0.7; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0%, rgba(155, 155, 155, 0.3) 37%, rgba(255, 255, 255, 0.3) 61%, rgba(255, 255, 255, 0.3) 100%); }
 
 .prefooter { width: 100%; background-color: rgba(0, 99, 150, 1); }
 .prefooter a, .prefooter h3, .prefooter h4 { color: white; }
-.prefootercontent { max-width: 1300px; margin: 0 auto; padding: 30px 10px 0 10px; }
+.prefootercontent { max-width: 1600px; margin: 0 auto; padding: 30px 10px 0 10px; }
 footer { width: 100%; display: block; position: absolute; }
 
 /* ---------- Divisions ---------- */
@@ -49,10 +47,10 @@ footer { width: 100%; display: block; position: absolute; }
 .canvas { width: 100%; display: table; position: relative; }
 .div100, .div70, .div60, .div50, .div40, .div33, .div30, .div25, .div20 { display: table-cell; padding: 10px; float: left; }
 .div100 { width: 100%; } .div70 { width: 70%; } .div60 { width: 60%; } .div50 { width: 50%; } .div40 { width: 40%; } .div33 { width: 33.33%; } .div30 { width: 30%; } .div25 { width: 25%; }
-.div20 { width: 16.66%; min-height: 260px; }
+.div20 { width: 16.66%; min-height: 300px; }
 .line { height: 1px; width: 100%; background-color: #f2f2f2; margin: 10px 0; }
 .linelight { border-bottom: 1px solid #f2f2f2; margin: 25px 0; }
-.gridbox { background-position: center; background-size: auto 100%; background-repeat: no-repeat; height: 120px; border-radius: 6px; position: relative; }
+.gridbox { background-position: center; background-size: contain; background-repeat: no-repeat; height: 120px; border-radius: 6px; position: relative; }
 a.windowlink { position: absolute; height: 100%; width: 100%; top: 0; left: 0; text-decoration: none; z-index: 10; background-color: rgba(255, 255, 255, 0.1); cursor: pointer; }
 a.windowlink:hover { background-color: rgba(255, 255, 255, 0); transition: background-color 0.5s ease; }
 
@@ -94,23 +92,25 @@ a.windowlink:hover { background-color: rgba(255, 255, 255, 0); transition: backg
 /* ---------- Navigation ---------- */
 
 #nav li { float: left; list-style: none; }
-#nav li a { display: block; font: 300 16px 'Oswald', sans-serif; padding: 30px 14px; color: black; text-transform: uppercase; }
+#nav li a { display: block; font: 300 16px 'Oswald', sans-serif; padding: 30px 14px; color: #5e5e5e; text-transform: uppercase; }
 #nav li a:hover, .storemenu li a:hover { background: rgba(0,99,150,0.7); color: white; text-decoration: none; transition: all 0.3s ease; }
 .social-icons { color: #5e5e5e; }
 .social-icons:hover { color: #006396; }
 
 /* ---------- Store ---------- */
 
-.storecontainer { width: 100%; background-color: #f1f1f1; }
-.storemenu { max-width: 1300px; margin: 0 auto; overflow: hidden; }
+.storecontainer { width: 100%; background-color: rgba(0,99,150,0.7); }
+.storemenu { max-width: 1600px; margin: 0 auto; overflow: hidden; }
 .storemenu li { list-style: none; }
-.storemenu li a { display: inline-block; list-style: none; padding: 13px; float: left; font: 300 15px 'Oswald', sans-serif; color: black; letter-spacing: 0.5px; text-transform: uppercase; }
+.storemenu li a { display: inline-block; list-style: none; padding: 16px; float: left; font: 500 15px 'Lato', sans-serif; color: white; letter-spacing: 0.5px; }
 
-#basketicon { display: inline-block; float: right; padding: 0 20px; font: 800 15px 'Lato', sans-serif; line-height: 49px; color: black; }
-.addtobasket { width: 30%; padding: 10px; background: #8aa8bd; border-radius: 7px; cursor: pointer; color: white; display: inline-block; font: normal 15px 'Lato'; }
+#basketicon { display: inline-block; float: right; padding: 0 20px; font: 800 15px 'Lato', sans-serif; line-height: 49px; color: white; }
+.addtobasket { width: 30%; padding: 10px; background: #006396; border-radius: 7px; cursor: pointer; color: white; display: inline-block; font: normal 15px 'Lato'; }
 .added { background-color: #f2f2f2 !important; color: #ccc !important; }
 
 /* ---------- Mobile Menu ---------- */
+
+#newCSPMenu { width: 100%; z-index: 110; height: auto; background: white; color: white; padding: 0 10px; position: absolute; top: 45; left: 0; display: none; top: 45px; }
 
 #newCSPMenu li {
 	width: 100%;
@@ -121,7 +121,6 @@ a.windowlink:hover { background-color: rgba(255, 255, 255, 0); transition: backg
 	background: white;
 	color: #006396;
 	margin-bottom: 10px;
-
 }
 
 .menuDiv50 {
@@ -213,6 +212,10 @@ a.windowlink:hover { background-color: rgba(255, 255, 255, 0); transition: backg
 }
 .showcase-heading {
     font: 500 50px 'Oswald', sans-serif;
+}
+
+.white {
+	color: white;
 }
 
 video#bgvid {

@@ -1,5 +1,12 @@
 /* Activate Libraries */
-$('.lazyYT').lazyYT();
+
+// Document Ready for LazyYT:
+$( document ).ready(function() {
+	$('.lazyYT').lazyYT();
+});
+
+
+
 var switchTo5x=true;
 /* stLight.options({publisher: "ur-36245509-985c-124a-a4b2-32cbf745b86", doNotHash: false, doNotCopy: false, hashAddressBar: false}); */
 $(function() { $("div.image").lazyload({ effect : "fadeIn" }); });
@@ -75,18 +82,30 @@ function addToBasket() {
 	$("#basketicon").animate({backgroundColor: 'rgba(0,99,150,0.2)'}, 'fast');
 	setTimeout(function(){ $('#basketicon').animate({backgroundColor: 'transparent'}, 'slow') }, 2000);
 
-	Snipcart.execute('item.add', {
+	if(!productPromoCode || !productPromoAmount) {
+		
+	}
+	
+	var snipcartJSON = {
 		// Required properties
-		id: productID + '-' + productVolume,
+		id: productID,
 		name: productTitle + " (" + productVolume + " " + productType + ")",
 		url: 'https://www.cspdetailing.com/range/product/' + productID,
 		price: productPrice,
 		// Optional properties
 		description: productVolume + " " + productType + " version.",
-		maxQuantity: 10,
+		maxQuantity: productMaxQuantity,
 		weight: 20,
 		shippable: true
-	});
+			
+	}
+	
+	if(productPromoCode) {
+		snipcartJSON["price-" + productPromoCode] = productPromoAmount;
+	}	
+	
+	
+	Snipcart.execute('item.add', snipcartJSON);
 
 Snipcart.execute('bind', 'cart.opened', function() {
 	console.log('Snipcart popup is visible');
